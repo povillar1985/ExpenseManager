@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using ExpenseManager.WebApi.App_Start;
 using System.Web.Http;
-using System.Web.Routing;
 
 namespace ExpenseManager.WebApi
 {
@@ -11,6 +7,9 @@ namespace ExpenseManager.WebApi
     {
         protected void Application_Start()
         {
+            //Registering IoC
+            Bootstrapper.Run();
+
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }

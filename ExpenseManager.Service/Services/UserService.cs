@@ -11,9 +11,13 @@ namespace ExpenseManager.Service.Services
 {
     public class UserService : Repository<User>, IUserService
     {
+        public UserService(Func<ExpenseDbContext> expenseDbContext) : base(expenseDbContext)
+        {
+        }
+
         public IEnumerable<User> GetInactiveUsers()
         {
-            return ExpenseDbContext.Users.Where(x=>x.Active == true);
+            return ExpenseDbContext.Users.Where(x=>x.Active == false);
         }
     }
 }

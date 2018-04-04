@@ -10,7 +10,12 @@ namespace ExpenseManager.Repo
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
     {
-        protected ExpenseDbContext ExpenseDbContext = new ExpenseDbContext();
+        protected readonly ExpenseDbContext ExpenseDbContext;
+
+        public Repository(Func<ExpenseDbContext> expenseDbContext)
+        {
+            ExpenseDbContext = expenseDbContext.Invoke();
+        }
 
         public void Add(TEntity entity)
         {

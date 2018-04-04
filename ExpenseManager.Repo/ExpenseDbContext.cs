@@ -1,4 +1,6 @@
 ﻿using ExpenseManager.Data.Domain;
+using ExpenseManager.Data.Domain.Invoice;
+using ExpenseManager.Data.Domain.Merchant;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,6 +18,11 @@ namespace ExpenseManager.Repo
         }
 
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Invoice>  Invoices { get; set; }
+        public virtual DbSet<InvoiceDetail> InvoiceDetails { get; set; }
+        public virtual DbSet<InvoiceImage> InvoiceImages { get; set; }
+        public virtual DbSet<Merchant> Merchants { get; set; }
+        public virtual DbSet<MerchantType> MerchantTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

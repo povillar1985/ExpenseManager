@@ -41,9 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="Domain\Invoice\Invoice.cs" />
+    <Compile Include="Domain\Invoice\InvoiceDetail.cs" />
+    <Compile Include="Domain\Invoice\InvoiceImage.cs" />
+    <Compile Include="Domain\Merchant\Merchant.cs" />
+    <Compile Include="Domain\Merchant\MerchantType.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IInvoiceService.cs" />
     <Compile Include="Services\IUserService.cs" />
   </ItemGroup>
   <ItemGroup />
